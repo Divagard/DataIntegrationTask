@@ -5,9 +5,9 @@ from urls import urls1,urls2
 
 
 
-
-conn = psycopg2.connect(database='sample', user='postgres',
-                        password='diva', host='localhost', port=5433)
+# database = 'sample' password = 'diva' default port 5432
+conn = psycopg2.connect(database='', user='postgres',
+                        password='', host='localhost', port='')
 
 cur = conn.cursor()
 bigurls = [urls1,urls2]
