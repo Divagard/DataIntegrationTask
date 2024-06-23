@@ -2,12 +2,17 @@ from urllib.request import urlopen
 import json
 import psycopg2
 from urls import urls1,urls2 
+import os 
 
-
+print('Hello....')
+db_user = os.getenv('POSTGRES_USER')
+db_password = os.getenv('POSTGRES_PASSWORD')
+db_name = os.getenv('POSTGRES_DB')
+db_host = os.getenv('POSTGRES_HOST')
 
 # database = 'sample' password = 'diva' default port 5432
-conn = psycopg2.connect(database='', user='postgres',
-                        password='', host='localhost', port='')
+conn = psycopg2.connect(database=db_name, user=db_user,
+                        password=db_password, host=db_host, port=5433)
 
 cur = conn.cursor()
 bigurls = [urls1,urls2]
